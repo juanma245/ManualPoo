@@ -1,0 +1,26 @@
+// Clase abstracta
+public abstract class Figura {
+    public abstract double calcularArea();
+}
+
+// Subclase
+public class Circulo extends Figura {
+    double radio;
+
+    public Circulo(double radio) {
+        this.radio = radio;
+    }
+
+    @Override
+    public double calcularArea() {
+        return Math.PI * radio * radio;
+    }
+}
+
+// Uso de la abstracción
+public class Main {
+    public static void main(String[] args) {
+        Figura miFigura = new Circulo(5);
+        System.out.println("Área del círculo: " + miFigura.calcularArea());
+    }
+}

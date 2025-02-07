@@ -1,0 +1,63 @@
+// Clase base (superclase)
+public class Vehiculo {
+    // Atributos privados (encapsulamiento)
+    private String marca;
+    private int año;
+
+    // Constructor de la clase base
+    public Vehiculo(String marca, int año) {
+        this.marca = marca;
+        this.año = año;
+    }
+
+    // Métodos getters (para acceder a los atributos privados)
+    public String getMarca() {
+        return marca;
+    }
+
+    public int getAño() {
+        return año;
+    }
+
+    // Método para mostrar información del vehículo
+    public void mostrarInformacion() {
+        System.out.println("Marca: " + marca);
+        System.out.println("Año: " + año);
+    }
+}
+
+// Subclase (hereda de Vehiculo)
+public class Coche extends Vehiculo {
+    // Atributo privado adicional
+    private int numPuertas;
+
+    // Constructor de la subclase
+    public Coche(String marca, int año, int numPuertas) {
+        // Llamada al constructor de la clase base (superclase)
+        super(marca, año);
+        this.numPuertas = numPuertas;
+    }
+
+    // Método getter para el atributo adicional
+    public int getNumPuertas() {
+        return numPuertas;
+    }
+
+    // Sobrescritura del método mostrarInformacion
+    @Override
+    public void mostrarInformacion() {
+        super.mostrarInformacion(); // Llama al método de la superclase
+        System.out.println("Número de puertas: " + numPuertas);
+    }
+}
+
+// Clase principal para probar la herencia
+public class Main {
+    public static void main(String[] args) {
+        // Creación de un objeto de la subclase Coche
+        Coche miCoche = new Coche("Toyota", 2020, 4);
+
+        // Uso de métodos heredados y propios
+        miCoche.mostrarInformacion();
+    }
+}

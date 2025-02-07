@@ -1,0 +1,16 @@
+public class CuentaBancaria {
+    // Atributo privado
+    private double saldo;
+
+    // Método público para acceder al saldo (getter)
+    public double getSaldo() {
+        return saldo;
+    }
+
+    // Método público para modificar el saldo (setter)
+    public void depositar(double cantidad) {
+        if (cantidad > 0) {
+            saldo += cantidad;
+        }
+    }
+}

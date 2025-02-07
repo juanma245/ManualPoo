@@ -1,0 +1,33 @@
+// Superclase
+public class Animal {
+    public void hacerSonido() {
+        System.out.println("Sonido genérico de animal.");
+    }
+}
+
+// Subclase
+public class Perro extends Animal {
+    @Override
+    public void hacerSonido() {
+        System.out.println("Guau guau!");
+    }
+}
+
+// Subclase
+public class Gato extends Animal {
+    @Override
+    public void hacerSonido() {
+        System.out.println("Miau!");
+    }
+}
+
+// Uso del polimorfismo
+public class Main {
+    public static void main(String[] args) {
+        Animal miAnimal = new Perro();
+        miAnimal.hacerSonido(); // Salida: Guau guau!
+
+        miAnimal = new Gato();
+        miAnimal.hacerSonido(); // Salida: Miau!
+    }
+}
