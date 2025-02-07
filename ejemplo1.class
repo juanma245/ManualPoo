@@ -1,0 +1,31 @@
+// Definición de una clase
+public class Coche {
+    // Atributos (propiedades)
+    String marca;
+    String color;
+    int velocidad;
+
+    // Métodos (comportamientos)
+    public void acelerar(int incremento) {
+        velocidad += incremento;
+    }
+
+    public void frenar(int decremento) {
+        velocidad -= decremento;
+    }
+
+    public void mostrarVelocidad() {
+        System.out.println("Velocidad actual: " + velocidad + " km/h");
+    }
+}
+
+// Creación de un objeto
+public class Main {
+    public static void main(String[] args) {
+        Coche miCoche = new Coche(); // Instancia de la clase Coche
+        miCoche.marca = "Toyota";
+        miCoche.color = "Rojo";
+        miCoche.acelerar(50);
+        miCoche.mostrarVelocidad(); // Salida: Velocidad actual: 50 km/h
+    }
+}
